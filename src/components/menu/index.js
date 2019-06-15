@@ -6,8 +6,8 @@ class Menu extends Component {
 
   render() {
     return (
-      <div className="nav-menu">
-        <h2>Main Menu</h2>
+      <div className="nav-menu box-shadow">
+        <h2 className="nav-menu__title typo_color_active">СНАБЖЕНИЕ</h2>
         <nav>{this.props.children}</nav>
       </div>
     )

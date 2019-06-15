@@ -44,8 +44,7 @@ class ProfilePage extends Component {
             Дополнительно
           </MenuItem>
         </Menu>
-        <div className="content">
-          <h2>ProfilePage</h2>
+        <div className="content box-shadow">
           <div>
             <div>
               <UserBlock size="l" user={this.props.user} />
