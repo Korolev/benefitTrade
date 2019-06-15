@@ -1,0 +1,32 @@
+.nav-menu {
+    width: 25%;
+    border: 1px solid #000;
+    height: 100%;
+    padding-left: 5px;
+}
+
+.nav-menu svg {
+    margin-right: 15px;
+}
+
+.nav-menu a {
+    color: #000;
+}
+
+.nav-menu .nav-elem {
+    padding-bottom: 20px;
+}
+
+.nav-menu .nav-elem:hover svg > path {
+    stroke: #109CF1;
+    fill: inherit;
+}
+
+.nav-menu .nav-elem:hover .orders > path {
+    fill: #109CF1;
+}
+
+.nav-menu .nav-elem:hover a {
+    color: #109CF1; 
+    text-decoration: none;
+}
