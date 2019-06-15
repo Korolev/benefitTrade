@@ -41,3 +41,36 @@
     line-height: 24px;
     margin-bottom: 42px;
 }
+
+.user-profile {
+    margin-left: 10px;
+}
+
+.user-name {
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.user-id {
+    color: #90A0B7;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+}
+
+.critery li {
+    list-style: none;
+    color: #90A0B7;
+}
+
+.critery {
+    padding: 0;    
+}
+
+.user-rating {
+    width: 100%;
+}
+
+.user-menu-large {
+    padding-left: 10px;
+}
