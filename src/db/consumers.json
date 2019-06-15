@@ -7,7 +7,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 3
+        "rating": 3,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "202",
@@ -17,7 +18,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 4
+        "rating": 4,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "203",
@@ -27,7 +29,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "204",
@@ -37,7 +40,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "205",
@@ -47,7 +51,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "206",
@@ -57,7 +62,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "207",
@@ -67,7 +73,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 4
+        "rating": 4,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "208",
@@ -77,7 +84,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "209",
@@ -87,7 +95,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar.png"
     },
     {
         "id": "210",
@@ -97,6 +106,7 @@
             "категория1",
             "категория2"
         ],
-        "rating": 2
+        "rating": 2,
+        "avatar": "/resources/images/avatar.png"
     }
 ]
