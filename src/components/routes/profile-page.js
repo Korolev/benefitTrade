@@ -4,6 +4,8 @@ import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
 import UserBlock from '../user-block'
 import { userSelector, userLoggedInSelector } from '../../selectors'
+import InputForm from '../input/InputForm'
+import './profile-page.css'
 
 class ProfilePage extends Component {
   static propTypes = {}
@@ -45,12 +47,31 @@ class ProfilePage extends Component {
           </MenuItem>
         </Menu>
         <div className="content box-shadow">
-          <div>
-            <div>
-              <UserBlock size="l" user={this.props.user} />
+          <div className="container custom-container">
+            <div className="row custom-row">
+              <div className="col-sm-3 custom-col">
+                <div className="col-content">
+                  <UserBlock
+                    size="l"
+                    user={this.props.user}
+                  />
+                </div>
+              </div>
+              <div className="col-sm custom-col">
+                <div className="col-content">
+                  <InputForm
+                    title={'Название юр. лица'}
+                    data={'ИП Мирохина А. Н.'}
+                    readonly={true}
+                  />
+                </div>
+              </div>
+              <div className="col-sm custom-col">
+                <div className="col-content">
+                  <button className="save-button">Сохранить</button>
+                </div>
+              </div>
             </div>
-            <div></div>
-            <div></div>
           </div>
         </div>
       </Fragment>

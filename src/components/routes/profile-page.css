@@ -1,0 +1,28 @@
+.content {
+    background: #F5F6F8;
+    height: 100%
+
+}
+.container.custom-container {
+    padding-top: 30px;
+    padding-right: 47px;
+    padding-left: 47px;
+    height: 100%
+}
+
+.custom-row {
+    background: #fff;
+    margin-right: 0;
+    margin-left: 0;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+}
+
+.custom-container .col-sm-3, .custom-container .col-sm.custom-col {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-content{
+    margin-top: 35px
+}
