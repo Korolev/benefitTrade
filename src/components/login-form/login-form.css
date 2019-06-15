@@ -1,0 +1,119 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.main-page {
+    background: url(./img/logistik.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 100%;
+    color: #fff;
+}
+
+.login-block {
+    display: block;
+    height: 100%;
+    width:100%; 
+    position: absolute; 
+    top:0;
+    background: rgba(0,0,0,0.4); 
+}
+
+.login-block h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: center;
+    padding-top: 75px;
+    text-transform: uppercase;
+}
+
+.user-category {
+    padding-top: 80px;
+    text-align: center;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 440px;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+.form-signin input {
+    margin: 10px 0;
+    -webkit-text-fill-color: #ffffff5e;
+    color: #fff;
+}
+
+.form-signin .form-control:focus {
+    -webkit-text-fill-color: #fff;
+}
+
+.gosuslugi {
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding-top: 10px;
+}
+
+.gosuslugi:hover {
+    color: #b7afaf;
+}
+
+.main-page .description {
+
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+}
+
+.form-check-label {
+    width: 125px;;
+    text-align: left;
+    font-size: 20px;
+    margin-top: -4px;
+}
+
+.category {
+    display: inline;
+}
+
+.producer {
+    float: left;
+}
+
+.buyer {
+    float: right;
+}
+
+.form-signin .form-control {
+    border: none;
+    background: inherit;
+    background-clip: padding-box;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #fff;
+}
+
+.form-signin .form-control:focus {
+    border-color: inherit;
+    border-bottom: 1px solid #136cc5;
+    box-shadow: none;
+    background: inherit;
+}
+
+div {
+    height: 100%;
+}
