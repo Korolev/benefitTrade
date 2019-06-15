@@ -56,16 +56,11 @@ class UserBlock extends Component {
     if (this.props.size !== 's') return ''
     return (
       <div className="col-md-8 user-profile">
-        <div className="user-name">{this.props.user.name}</div>
-        <div className="user-id">ИНН: {this.props.user.id}</div>
+        <div className="user-name typo_size_l">{this.props.user.name}</div>
+        <div className="user-id typo_size_s">ИНН: {this.props.user.id}</div>
       </div>
     )
   }
-
-  // get userId() {
-  //   if (this.props.size !== 's') return ''
-  //   return 'ИНН: ' + this.props.user.id
-  // }
 }
 
 const sizes = {

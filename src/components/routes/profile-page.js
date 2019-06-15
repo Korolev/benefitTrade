@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
+import Search from '../search'
 import UserBlock from '../user-block'
 import { userSelector, userLoggedInSelector } from '../../selectors'
 import InputForm from '../input/InputForm'
@@ -22,30 +23,29 @@ class ProfilePage extends Component {
     return (
       <Fragment>
         <Menu>
-          {/* <MenuItem link="/home">HomePage</MenuItem>
-          <MenuItem link="/login">LoginPage</MenuItem> */}
           <div>
             <UserBlock size="s" user={this.props.user} />
           </div>
           <MenuItem link="/profile" icon="profile">
             Мой профиль
           </MenuItem>
-          <MenuItem link="/profile" icon="buyers">
+          <MenuItem link="/home" icon="buyers">
             Мои поставщики
           </MenuItem>
-          <MenuItem link="/profile" icon="notification">
+          <MenuItem link="/home" icon="notification">
             Мои уведомления
           </MenuItem>
-          <MenuItem link="/profile" icon="orders">
+          <MenuItem link="/home" icon="orders">
             Мои заказы
           </MenuItem>
-          <MenuItem link="/profile" icon="find-buyer">
+          <MenuItem link="/home" icon="find-buyer">
             Найти поставщика
           </MenuItem>
-          <MenuItem link="/profile" icon="more">
+          <MenuItem link="/home" icon="more">
             Дополнительно
           </MenuItem>
         </Menu>
+        <Search></Search>
         <div className="content box-shadow">
           <div className="container custom-container">
             <div className="row custom-row">
