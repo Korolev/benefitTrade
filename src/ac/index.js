@@ -1,7 +1,8 @@
-import { INCREMENT } from '../constants'
+import { LOGIN } from '../constants'
 
-export function increment() {
+export function login(id) {
   return {
-    type: INCREMENT
+    type: LOGIN,
+    payload: { id }
   }
 }
