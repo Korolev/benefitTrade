@@ -6,7 +6,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <div>
+      <div className="nav-menu">
         <h2>Main Menu</h2>
         <nav>{this.props.children}</nav>
       </div>

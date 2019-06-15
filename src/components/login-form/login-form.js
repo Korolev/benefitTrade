@@ -25,17 +25,6 @@ class LoginForm extends Component {
 
   render() {
     return (
-      //     <div>
-      // <h2>Форма входа</h2>
-      // Ваш ИНН:
-      // <input
-      //   type="text" name="id"
-      //   value={this.state.id}
-      //   className={this.getClassName('id')}
-      //   onChange={this.handleChange('id')}
-      // />
-      // <input type="submit" value="Войти"  disabled={!this.isValidField('id')} onClick={this.submitForm} />
-      // </div>
       <section className="main-page">
         <article className="login-block">
           <h1>Снабжение</h1>
@@ -72,6 +61,7 @@ class LoginForm extends Component {
               <input
                 type="text"
                 name="id"
+                autocomplete="off"
                 value={this.state.id}
                 className={this.getClassName('id')}
                 onChange={this.handleChange('id')}
@@ -85,7 +75,9 @@ class LoginForm extends Component {
               />
               <div className="row">
                 <div className="col remember-me">
-                  <input type="checkbox" value="remember-me" /> Запомнить меня
+                  <label>
+                    <input type="checkbox" value="remember-me" /> Запомнить меня
+                  </label>
                 </div>
                 <div className="forgot-pass col">Забыли пароль?</div>
               </div>
