@@ -1,4 +1,5 @@
 .nav-menu {
+    position: absolute;
     width: 25%;
     border: 1px solid #000;
     height: 100%;
@@ -27,6 +28,6 @@
 }
 
 .nav-menu .nav-elem:hover a {
-    color: #109CF1; 
+    color: #109CF1;
     text-decoration: none;
 }

@@ -1,11 +1,22 @@
 import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
+import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
 import Grid from '../grid'
 import { getConsumers, getProviders } from '../../db/index'
 import StarRating from '../starrating'
+import { userSelector, userLoggedInSelector } from '../../selectors'
 
 class HomePage extends Component {
   static propTypes = {}
+
+  componentDidMount() {
+    this.checkLogin();
+  }
+
+  componentDidUpdate() {
+    this.checkLogin();
+  }
 
   render() {
     const traders = getProviders()
@@ -57,16 +68,30 @@ class HomePage extends Component {
             Дополнительно
           </MenuItem>
         </Menu>
-        <h2>HomePage</h2>
-        <Grid
-          items={items}
-          dataMap={dataMap}
-          columnSequences={columnSequences}
-          columnComponents={columnComponents}
-        />
+        <div className="content">
+          <h2>HomePage</h2>
+          <Grid
+            items={items}
+            dataMap={dataMap}
+            columnSequences={columnSequences}
+            columnComponents={columnComponents}
+          />
+        </div>
       </Fragment>
     )
   }
+
+  checkLogin = () => {
+    if (!this.props.loggedIn) {
+      history.push('/login')
+    }
+  }
 }
 
-export default HomePage
+export default connect(
+  (state) => ({
+    user: userSelector(state),
+    loggedIn: userLoggedInSelector(state)
+  }),
+  null
+)(HomePage)

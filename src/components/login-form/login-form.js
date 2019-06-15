@@ -61,7 +61,7 @@ class LoginForm extends Component {
               <input
                 type="text"
                 name="id"
-                autocomplete="off"
+                autoComplete="off"
                 value={this.state.id}
                 className={this.getClassName('id')}
                 onChange={this.handleChange('id')}
