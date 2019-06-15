@@ -11,7 +11,7 @@ class MenuItem extends Component {
     return (
       <div className="nav-elem">
         <Icon type={icon}></Icon>
-        <NavLink to={link} activeStyle={{ color: 'red' }}>
+        <NavLink to={link} activeStyle={{ color: '#109CF1' }}>
           {children}
         </NavLink>
       </div>

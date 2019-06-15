@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
+import Search from '../search'
 import Grid from '../grid'
 import { getConsumers, getProviders } from '../../db/index'
 import StarRating from '../starrating'
@@ -68,6 +69,7 @@ class HomePage extends Component {
             Дополнительно
           </MenuItem>
         </Menu>
+        <Search></Search>
         <div className="content box-shadow">
           <Grid
             items={items}

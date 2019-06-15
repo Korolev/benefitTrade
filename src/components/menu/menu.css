@@ -44,18 +44,7 @@
 
 .user-profile {
     margin-left: 10px;
-}
-
-.user-name {
-    font-size: 16px;
-    line-height: 21px;
-}
-
-.user-id {
-    color: #90A0B7;
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: 0.01em;
+    padding-top: 5px;
 }
 
 .critery li {
@@ -72,5 +61,5 @@
 }
 
 .user-menu-large {
-    padding-left: 10px;
+    padding-bottom: 40px;
 }
