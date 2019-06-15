@@ -5,7 +5,7 @@ import GridHead from './gridhead'
 import GridBody from './gridbody'
 
 const Grid = (props) => (
-  <table>
+  <table className="table">
     <GridHead {...props} />
     <GridBody {...props} />
   </table>

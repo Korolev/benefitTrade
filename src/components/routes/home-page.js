@@ -7,6 +7,7 @@ import Grid from '../grid'
 import { getConsumers, getProviders } from '../../db/index'
 import StarRating from '../starrating'
 import { userSelector, userLoggedInSelector } from '../../selectors'
+import Icon from '../icon'
 
 class HomePage extends Component {
   static propTypes = {}
@@ -23,6 +24,7 @@ class HomePage extends Component {
     const traders = getProviders()
 
     const dataMap = {
+      connected: '',
       name: 'Название компании',
       phone: 'Котактный телефон',
       type: 'Статус поставщика',
@@ -33,7 +35,18 @@ class HomePage extends Component {
     const columnSequences = Object.keys(dataMap)
 
     const columnComponents = {
-      rating: (rating) => <StarRating starsSelected={rating} />
+      rating: (rating) => <StarRating starsSelected={rating} />,
+      connected: (connected) => (
+        <span
+          className={
+            Math.random() * 10 > 5
+              ? 'connection-star'
+              : 'connection-star connected'
+          }
+        >
+          <Icon type="star" />
+        </span>
+      )
     }
 
     const sortByKey = (ascdesc) => (key) => (a, b) => {
