@@ -8,7 +8,7 @@ class MenuItem extends Component {
   render() {
     const { link, children } = this.props
     return (
-      <div class="nav-elem">
+      <div className="nav-elem">
         {this.icon}
         <NavLink to={link} activeStyle={{ color: 'red' }}>
           {children}
@@ -72,7 +72,7 @@ class MenuItem extends Component {
           <svg
             width="17"
             height="18"
-            class="orders"
+            className="orders"
             viewBox="0 0 17 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

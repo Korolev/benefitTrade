@@ -24,7 +24,7 @@ class ProfilePage extends Component {
           <MenuItem link="/profile">ProfilePage</MenuItem>
           <MenuItem link="/login">LoginPage</MenuItem>
         </Menu>
-        <div>
+        <div className="content">
           <h2>ProfilePage</h2>
           <div>
             <div><UserBlock size="l" username={this.props.user.name} avatar={this.props.user.avatar} /></div>

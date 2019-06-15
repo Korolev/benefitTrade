@@ -68,13 +68,15 @@ class HomePage extends Component {
             Дополнительно
           </MenuItem>
         </Menu>
-        <h2>HomePage</h2>
-        <Grid
-          items={items}
-          dataMap={dataMap}
-          columnSequences={columnSequences}
-          columnComponents={columnComponents}
-        />
+        <div className="content">
+          <h2>HomePage</h2>
+          <Grid
+            items={items}
+            dataMap={dataMap}
+            columnSequences={columnSequences}
+            columnComponents={columnComponents}
+          />
+        </div>
       </Fragment>
     )
   }
