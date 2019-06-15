@@ -6,9 +6,7 @@
 
 .star {
     cursor: pointer;
-    width: 12px;
-    height: 12px;
-    margin: 2.5px;
+    margin: 0 2.5px;
 }
 
 .star.selected svg{

@@ -1,0 +1,7 @@
+.connection-star svg{
+    fill: #99A6B7
+}
+
+.connection-star.connected svg{
+    fill: #FFD130
+}

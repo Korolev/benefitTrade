@@ -7,6 +7,7 @@ import Grid from '../grid'
 import { getConsumers, getProviders } from '../../db/index'
 import StarRating from '../starrating'
 import { userSelector, userLoggedInSelector } from '../../selectors'
+import Icon from '../icon'
 
 class HomePage extends Component {
   static propTypes = {}
@@ -23,28 +24,35 @@ class HomePage extends Component {
     const traders = getProviders()
 
     const dataMap = {
+      connected: '',
       name: 'Название компании',
       phone: 'Котактный телефон',
       type: 'Статус поставщика',
-      categories: 'Категории поставщика',
-      rating: 'Рейтинг'
+      rating: 'Рейтинг',
+      categories: 'Категории поставщика'
     }
 
     const columnSequences = Object.keys(dataMap)
 
+    const sortableColumns = ['name', 'rating']
+
+    const sortByColumn = 'rating'
+
     const columnComponents = {
-      rating: (rating) => <StarRating starsSelected={rating} />
+      rating: (rating) => <StarRating starsSelected={rating} />,
+      connected: (connected) => (
+        <span
+          className={
+            Math.random() * 10 > 5
+              ? 'connection-star'
+              : 'connection-star connected'
+          }
+        >
+          <Icon type="star" />
+        </span>
+      )
     }
 
-    const sortByKey = (ascdesc) => (key) => (a, b) => {
-      if (ascdesc === 'asc') {
-        return a[key] < b[key] ? 1 : -1
-      } else {
-        return a[key] < b[key] ? -1 : 1
-      }
-    }
-
-    const items = traders.sort(sortByKey('asc')('rating'))
     return (
       <Fragment>
         <Menu>
@@ -72,10 +80,12 @@ class HomePage extends Component {
         <Search></Search>
         <div className="content box-shadow">
           <Grid
-            items={items}
+            items={traders}
             dataMap={dataMap}
             columnSequences={columnSequences}
             columnComponents={columnComponents}
+            sortableColumns={sortableColumns}
+            sortByColumn={sortByColumn}
           />
         </div>
       </Fragment>
