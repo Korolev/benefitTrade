@@ -68,8 +68,7 @@ class HomePage extends Component {
             Дополнительно
           </MenuItem>
         </Menu>
-        <div className="content">
-          <h2>HomePage</h2>
+        <div className="content box-shadow">
           <Grid
             items={items}
             dataMap={dataMap}

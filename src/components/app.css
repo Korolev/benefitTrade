@@ -1,3 +1,57 @@
 .content {
-    margin-left: 25%;
+    margin: 94px 30px 34px 300px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.box-shadow {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.06)
+}
+
+.button {
+    font-weight: 600;
+    color: #fff;
+    background-color: #109CF1;
+    height: 42px;
+    font-size: 13px;
+    line-height: 100%;
+    padding: 0 88px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 4px rgba(16, 156, 241, 0.24)
+}
+
+.button:hover {
+    background-color: #385572;
+}
+
+/**
+ * Typography.
+ */
+body {
+    font-family: Poppins, Verdana, sans-serif;
+    font-style: Medium;
+    font-size: 13px;
+    line-height: 19px;
+    color: #323C47;
+    background-color: #E5E5E5;
+}
+
+.typo_size_l {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.typo_size_s {
+    font-size: 11px;
+    line-height: 16px;
+    color: #90A0B7;
+}
+
+.typo_color_gray {
+    color: #334D6E;
+}
+
+.typo_color_active {
+    color: #109CF1;
 }
