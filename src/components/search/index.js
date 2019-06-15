@@ -11,7 +11,7 @@ class Search extends Component {
         <Icon type="search"></Icon>
         <input
           type="search"
-          class="form-control"
+          className="form-control"
           placeholder="Начните вводить текст"
           aria-label="Search"
           aria-describedby="basic-addon1"
