@@ -6,7 +6,8 @@ class UserBlock extends Component {
   static propTypes = {
     size: PropTypes.string.isRequired,
     avatar: PropTypes.string,
-    username: PropTypes.string
+    name: PropTypes.string,
+    id: PropTypes.string
   }
 
   state = {
@@ -17,17 +18,17 @@ class UserBlock extends Component {
     return (
       <div>
         <div
-          className={("user-block user-block_size_" + this.props.size)}
+          className={'user-block user-block_size_' + this.props.size}
           style={{
             width: sizes[this.props.size],
             height: sizes[this.props.size],
-            backgroundImage: "url(" + this.props.avatar + ")",
+            backgroundImage: 'url(' + this.props.user.avatar + ')',
             backgroundColor: 'lightblue'
           }}
         ></div>
-        <div>
-          {this.userRating}
-        </div>
+        <div>{this.userId}</div>
+        <div>{this.userName}</div>
+        <div>{this.userRating}</div>
       </div>
     )
   }
@@ -35,6 +36,15 @@ class UserBlock extends Component {
   get userRating() {
     if (this.props.size !== 'l') return ''
     return 'rating'
+  }
+
+  get userName() {
+    return this.props.user.name
+  }
+
+  get userId() {
+    if (this.props.size !== 's') return ''
+    return this.props.user.id
   }
 }
 

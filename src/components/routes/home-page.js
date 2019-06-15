@@ -11,11 +11,11 @@ class HomePage extends Component {
   static propTypes = {}
 
   componentDidMount() {
-    this.checkLogin();
+    this.checkLogin()
   }
 
   componentDidUpdate() {
-    this.checkLogin();
+    this.checkLogin()
   }
 
   render() {

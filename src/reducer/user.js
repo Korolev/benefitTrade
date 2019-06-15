@@ -1,7 +1,6 @@
 import { getProviderById, getConsumerById } from '../db'
 import { LOGIN } from '../constants'
 
-
 const defaultUser = {
   id: '',
   type: ''

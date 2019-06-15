@@ -9,25 +9,47 @@ class ProfilePage extends Component {
   static propTypes = {}
 
   componentDidMount() {
-    this.checkLogin();
+    this.checkLogin()
   }
 
   componentDidUpdate() {
-    this.checkLogin();
+    this.checkLogin()
   }
 
   render() {
     return (
       <Fragment>
         <Menu>
-          <MenuItem link="/home">HomePage</MenuItem>
-          <MenuItem link="/profile">ProfilePage</MenuItem>
-          <MenuItem link="/login">LoginPage</MenuItem>
+          {/* <MenuItem link="/home">HomePage</MenuItem>
+          <MenuItem link="/login">LoginPage</MenuItem> */}
+          <div>
+            <UserBlock size="s" user={this.props.user} />
+          </div>
+          <MenuItem link="/profile" icon="profile">
+            Мой профиль
+          </MenuItem>
+          <MenuItem link="/profile" icon="buyers">
+            Мои поставщики
+          </MenuItem>
+          <MenuItem link="/profile" icon="notification">
+            Мои уведомления
+          </MenuItem>
+          <MenuItem link="/profile" icon="orders">
+            Мои заказы
+          </MenuItem>
+          <MenuItem link="/profile" icon="find-buyer">
+            Найти поставщика
+          </MenuItem>
+          <MenuItem link="/profile" icon="more">
+            Дополнительно
+          </MenuItem>
         </Menu>
         <div className="content">
           <h2>ProfilePage</h2>
           <div>
-            <div><UserBlock size="l" username={this.props.user.name} avatar={this.props.user.avatar} /></div>
+            <div>
+              <UserBlock size="l" user={this.props.user} />
+            </div>
             <div></div>
             <div></div>
           </div>
