@@ -39,6 +39,7 @@ class LoginForm extends Component {
                   name="exampleRadios"
                   id="exampleRadios1"
                   value="option1"
+                  defaultChecked
                 />
                 <label className="form-check-label" htmlFor="exampleRadios1">
                   Я поставщик
@@ -66,6 +67,7 @@ class LoginForm extends Component {
                 className={this.getClassName('id')}
                 onChange={this.handleChange('id')}
                 placeholder="Логин (ИНН)"
+                autoFocus={true}
               />
               <input
                 type="password"

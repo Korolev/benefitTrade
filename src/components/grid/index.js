@@ -1,20 +1,65 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './grid.css'
 import GridHead from './gridhead'
 import GridBody from './gridbody'
+import sortByKey from '../../helpers/sortByKey'
 
-const Grid = (props) => (
-  <table className="table">
-    <GridHead {...props} />
-    <GridBody {...props} />
-  </table>
-)
+export default class Grid extends Component {
+  constructor(props) {
+    super(props)
+    console.log('HERE', props.sortByColumn, props)
+    this.state = {
+      sortType: 'asc',
+      sortByColumn: props.sortByColumn,
+      items: props.items.concat().sort(sortByKey('asc')(props.sortByColumn))
+    }
+
+    this.sortByField.bind(this)
+  }
+  //const items = traders.sort(sortByKey('asc')('rating'))
+
+  sortByField(colName) {
+    const { sortType, sortByColumn } = this.state
+    let newSortType = 'asc'
+
+    if (this.props.sortableColumns.includes(colName)) {
+      if (sortByColumn === colName) {
+        newSortType = sortType === 'asc' ? 'desc' : 'asc'
+      }
+
+      this.setState({
+        sortType: newSortType,
+        sortByColumn: colName,
+        items: this.props.items.concat().sort(sortByKey(newSortType)(colName))
+      })
+    }
+  }
+
+  render() {
+    return (
+      <table className="table">
+        <GridHead
+          {...this.props}
+          onSortableClick={(key) => this.sortByField(key)}
+        />
+        <GridBody {...this.props} items={this.state.items} />
+      </table>
+    )
+  }
+}
 
 Grid.propTypes = {
+  sortByColumn: PropTypes.string.isRequired,
   items: PropTypes.array,
+  sortableColumns: PropTypes.array,
   columnSequences: PropTypes.array,
   dataMap: PropTypes.object
 }
 
-export default Grid
+Grid.defaultProps = {
+  items: [],
+  sortableColumns: [],
+  columnSequences: [],
+  dataMap: {}
+}
