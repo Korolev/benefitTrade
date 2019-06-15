@@ -51,10 +51,7 @@ class ProfilePage extends Component {
             <div className="row custom-row">
               <div className="col-sm-3 custom-col">
                 <div className="col-content">
-                  <UserBlock
-                    size="l"
-                    user={this.props.user}
-                  />
+                  <UserBlock size="l" user={this.props.user} />
                 </div>
               </div>
               <div className="col-sm custom-col">
