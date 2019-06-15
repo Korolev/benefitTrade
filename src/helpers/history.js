@@ -1,6 +1,5 @@
-import createHistory from 'history/createBrowserHistory'
-
-const history = createHistory()
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory()
 
 //dev only, remove in PROD!
 window.routerHistory = history
