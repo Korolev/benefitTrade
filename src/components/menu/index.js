@@ -7,8 +7,8 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        {/* <h2>Main Menu</h2>
-        <nav>{this.props.children}</nav> */}
+        <h2>Main Menu</h2>
+        <nav>{this.props.children}</nav>
       </div>
     )
   }

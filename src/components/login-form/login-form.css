@@ -44,8 +44,8 @@ html, body {
 .form-signin {
     width: 100%;
     max-width: 440px;
-    padding: 15px;
-    margin-top: 50px;
+    padding: 0;
+    margin-top: 75px;
 }
 
 .form-signin input {
@@ -63,6 +63,7 @@ html, body {
     width: 100%;
     display: block;
     padding-top: 10px;
+    cursor: pointer;
 }
 
 .gosuslugi:hover {
@@ -105,6 +106,7 @@ html, body {
     line-height: 19px;
     letter-spacing: 0.01em;
     color: #fff;
+    margin: 30px 0;
 }
 
 .form-signin .form-control:focus {
@@ -114,6 +116,40 @@ html, body {
     background: inherit;
 }
 
-div {
+#root,
+#root > div {
     height: 100%;
+}
+
+.form-signin .button {
+    width: 100%;
+    height: 50px;
+    background: #136cc5;
+    cursor: pointer;
+    border: none;
+    -webkit-text-fill-color: #fff;
+    margin-top: 30px;
+}
+
+.button:hover {
+    background: #385572;
+}
+
+.remember-me {
+    text-align: left;
+}
+
+.forgot-pass {
+    margin-top: 5px;
+    text-align: right;
+}
+
+.form-signin .col {
+    padding: 0;
+    cursor: pointer;
+}
+
+.form-signin .row {
+    margin: 0;
+    padding: 0; 
 }

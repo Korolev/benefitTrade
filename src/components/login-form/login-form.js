@@ -83,18 +83,22 @@ class LoginForm extends Component {
                 className="form-control"
                 placeholder="Пароль"
               />
-              <div className="checkbox mb-3">
-                <label className="remember-me">
+              <div className="row">
+                <div className="col remember-me">
                   <input type="checkbox" value="remember-me" /> Запомнить меня
-                </label>
+                </div>
+                <div className="forgot-pass col">Забыли пароль?</div>
               </div>
               <input
                 type="submit"
                 value="Войти"
                 disabled={!this.isValidField('id')}
                 onClick={this.submitForm}
+                className="button"
               />
-              <div className="gosuslugi">Войти через портал Госуслуги</div>
+              <div className="gosuslugi">
+                Войти через портал Госуслуги (ЕСИА)
+              </div>
             </form>
           </div>
         </article>
