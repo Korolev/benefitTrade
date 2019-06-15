@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from "cors";
 import { serverPort, apiPrefix } from "./config";
+import "./algorithms/tsp-dp";
+
 const app = express();
 
 app.use(bodyParser.json({limit: '50mb'}));
