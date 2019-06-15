@@ -1,5 +1,5 @@
-let providers = require('./providers.json');
-let consumers = require('./consumers.json');
+let providers = require('./providers.json')
+let consumers = require('./consumers.json')
 
-export const getProviders = () => providers;
-export const getConsumers = () => consumers;
+export const getProviders = () => providers
+export const getConsumers = () => consumers

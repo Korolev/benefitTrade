@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import LoginForm from '../login-form'
+import LoginForm from '../login-form/login-form'
 
 class LoginPage extends Component {
   static propTypes = {}

@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import LoginPage from './routes/login-page'
 import HomePage from './routes/home-page'
 import ProfilePage from './routes/profile-page'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
   render() {
