@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import StarRating from '../starrating'
 import './user-block.css'
 
 class UserBlock extends Component {
@@ -16,9 +17,9 @@ class UserBlock extends Component {
 
   render() {
     return (
-      <div>
+      <div className="row no-gutters user-menu-large">
         <div
-          className={'user-block user-block_size_' + this.props.size}
+          className={'user-block user-block_size_ col-md-4' + this.props.size}
           style={{
             width: sizes[this.props.size],
             height: sizes[this.props.size],
@@ -26,26 +27,45 @@ class UserBlock extends Component {
             backgroundColor: 'lightblue'
           }}
         ></div>
-        <div>{this.userId}</div>
-        <div>{this.userName}</div>
-        <div>{this.userRating}</div>
+        {this.showUserInMenu}
+        {this.showAllUserRating}
+      </div>
+    )
+  }
+
+  get showAllUserRating() {
+    if (this.props.size !== 'l') return ''
+    return (
+      <div className="user-rating">
+        {this.userRating}
+        <ul className="critery">
+          <li>Регулярность закупок</li>
+          <li>Объёмы закупок</li>
+          <li>Платёжеспособность</li>
+        </ul>
       </div>
     )
   }
 
   get userRating() {
     if (this.props.size !== 'l') return ''
-    return 'rating'
+    return <StarRating starsSelected={this.props.user.rating}></StarRating>
   }
 
-  get userName() {
-    return this.props.user.name
-  }
-
-  get userId() {
+  get showUserInMenu() {
     if (this.props.size !== 's') return ''
-    return this.props.user.id
+    return (
+      <div className="col-md-8 user-profile">
+        <div className="user-name">{this.props.user.name}</div>
+        <div className="user-id">ИНН: {this.props.user.id}</div>
+      </div>
+    )
   }
+
+  // get userId() {
+  //   if (this.props.size !== 's') return ''
+  //   return 'ИНН: ' + this.props.user.id
+  // }
 }
 
 const sizes = {

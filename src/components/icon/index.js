@@ -129,8 +129,8 @@ class Icon extends Component {
             <path
               d="M5.67738 5.13368H1.5437L4.75879 8.34877L3.38089 12.9417L7.51458 10.186L11.189 12.9417L9.81106 8.34877L13.4854 5.13368H8.89247L7.51458 1L5.67738 5.13368Z"
               stroke="#C2CFE0"
-              stroke-width="1.4"
-              stroke-linejoin="round"
+              strokeWidth="1.4"
+              strokeLinejoin="round"
             />
           </svg>
         )
