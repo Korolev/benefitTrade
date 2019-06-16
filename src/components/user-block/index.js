@@ -5,7 +5,10 @@ import './user-block.css'
 
 class UserBlock extends Component {
   static propTypes = {
-    size: PropTypes.string.isRequired
+    size: PropTypes.string.isRequired,
+    avatar: PropTypes.string,
+    name: PropTypes.string,
+    id: PropTypes.string
   }
 
   state = {
@@ -14,7 +17,11 @@ class UserBlock extends Component {
 
   render() {
     return (
-      <div className="row no-gutters user-menu-large">
+      <div
+        className={
+          'row no-gutters user-menu-large user-menu-' + this.props.size
+        }
+      >
         <div
           className={'user-block user-block_size_ col-md-4' + this.props.size}
           style={{
@@ -50,19 +57,30 @@ class UserBlock extends Component {
   }
 
   get showUserInMenu() {
-    if (this.props.size !== 's') return ''
-    return (
-      <div className="col-md-8 user-profile">
-        <div className="user-name typo_size_l">{this.props.user.name}</div>
-        <div className="user-id typo_size_s">ИНН: {this.props.user.id}</div>
-      </div>
-    )
+    if (this.props.size === 's') {
+      return (
+        <div className="col-md-8 user-profile">
+          <div className="user-name typo_size_l">{this.props.user.name}</div>
+          <div className="user-id typo_size_s">ИНН: {this.props.user.id}</div>
+        </div>
+      )
+    } else if (this.props.size === 'xs') {
+      return (
+        <div className="col-md-8 user-profile">
+          <div className="user-name typo_size_l">{this.props.user.name}</div>
+          <div className="user-id typo_size_s">
+            {this.props.user.categories}
+          </div>
+        </div>
+      )
+    }
   }
 }
 
 const sizes = {
   l: 100,
-  s: 46
+  s: 46,
+  xs: 24
 }
 
 export default UserBlock

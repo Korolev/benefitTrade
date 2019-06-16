@@ -61,3 +61,34 @@ body {
 .typo_color_active {
     color: #109CF1;
 }
+
+/**
+* Tables
+*/
+
+table.table td, table.table.table th {
+    vertical-align: middle;
+}
+
+table.table.table th{       
+    color: #334D6E;
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+.sortable-col span{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAYAAAB4zEQNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACQSURBVHgBfY67DcJAEERnTuecUugACB0SIgLIEF2YChwhBAkEfDrAkhO34hJcgM/r71n+ySONtLNvtFqi0fUTLh2mT0Nuzzs3Lne0QNNExbgoHGfEpixwAKyqgnZofAES1G5FER9z4u0XHKeAEkm0MlhD4TCiQq/69v4OXr2CwDvt3QttbgsNGF16fP+rbs4BPdcyvbq5mxAAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-position: right 60%;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+
+/**
+* Content
+*/
+
+.content.content-height-auto{
+    height: auto;
+}

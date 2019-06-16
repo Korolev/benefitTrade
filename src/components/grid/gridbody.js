@@ -12,7 +12,7 @@ const GridBody = ({
       <tr key={i}>
         {columnSequences.map((key, i) => (
           <td key={i}>
-            {(columnComponents[key] && columnComponents[key](item[key])) ||
+            {(columnComponents[key] && columnComponents[key](item, key)) ||
               item[key]}
           </td>
         ))}

@@ -63,3 +63,7 @@
 .user-menu-large {
     padding-bottom: 40px;
 }
+
+.user-menu-xs {
+    padding-bottom: 0px;
+}

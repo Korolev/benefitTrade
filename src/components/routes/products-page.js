@@ -4,7 +4,12 @@ import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
 import UserBlock from '../user-block'
 import { loadProductsByUserId, loadViewedUser } from '../../ac'
-import { userSelector, userLoggedInSelector, userProductsSelector, userViewedSelector } from '../../selectors'
+import {
+  userSelector,
+  userLoggedInSelector,
+  userProductsSelector,
+  userViewedSelector
+} from '../../selectors'
 
 class ProductsPage extends Component {
   static propTypes = {}
