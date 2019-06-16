@@ -4,9 +4,7 @@
 
 }
 .container.custom-container {
-    padding-top: 30px;
-    padding-right: 47px;
-    padding-left: 47px;
+    padding: 0 30px 20px;
     height: 100%
 }
 
@@ -52,7 +50,6 @@
     cursor: pointer;
 }
 
-
 .input-form {
     width: 100%;
     float: left;
@@ -87,4 +84,13 @@
 
 .user-map-block label {
     text-decoration: underline;
+}
+
+.custom-container .user-profile,
+.custom-container .save-button {
+    align-self: flex-start;
+}
+
+.custom-container .save-button > div {
+    text-align: right;
 }
