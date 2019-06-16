@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
 import Search from '../search'
+import ClientMap from '../client-map'
 import UserBlock from '../user-block'
 import { userSelector, userLoggedInSelector } from '../../selectors'
 import './profile-page.css'
@@ -150,6 +151,14 @@ class ProfilePage extends Component {
                     {pensilIcon}
                   </div>
                 </form>
+                <div className="col-content">
+                  <div className="user-map-block">
+                    <label className="input-container__title">
+                      Проверить адрес на корректность
+                    </label>
+                    <ClientMap></ClientMap>
+                  </div>
+                </div>
               </div>
               <div className="col-sm custom-col">
                 <div className="col-content">

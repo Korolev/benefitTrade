@@ -68,7 +68,7 @@ class UserBlock extends Component {
       return (
         <div className="col-md-8 user-profile">
           <div className="user-name typo_size_l">{this.props.user.name}</div>
-          <div className="user-id typo_size_s">
+          <div className="user-id typo_size_s typo_text_elipsis typo_text_nowrap">
             {this.props.user.categories}
           </div>
         </div>
