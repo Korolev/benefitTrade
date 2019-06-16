@@ -7,6 +7,7 @@ import Search from '../search'
 import Grid from '../grid'
 import { getProviders } from '../../db/index'
 import StarRating from '../starrating'
+import Icon from '../icon'
 import {
   userSelector,
   userLoggedInSelector,
@@ -18,6 +19,13 @@ import './home-page.css'
 import { loadProviders, loadConsumers } from '../../ac'
 
 class HomePage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentView: 'listview'
+    }
+    this.changeView.bind(this)
+  }
   static propTypes = {}
 
   componentDidMount() {
@@ -32,6 +40,13 @@ class HomePage extends Component {
 
   componentDidUpdate() {
     this.checkLogin()
+  }
+
+  changeView(view) {
+    console.log(view)
+    this.setState({
+      currentView: view
+    })
   }
 
   render() {
@@ -89,7 +104,7 @@ class HomePage extends Component {
     const columnComponents = {
       name: (item, key) => (
         <div>
-          <NavLink to={'/profile/' + item.id}>
+          <NavLink to={'/products/' + item.id}>
             <UserBlock size="xs" user={item} />
           </NavLink>
         </div>
@@ -124,7 +139,37 @@ class HomePage extends Component {
   get gridArea() {
     console.log(this.props, '<<PROPS')
     if (this.props.user && this.props.user.type === 'provider') {
-      return <div></div>
+      return (
+        <Fragment>
+          <div className="content-nav-elems">
+            <div
+              className={[
+                'nav-elem',
+                this.state.currentView === 'mapview' ? 'nav-elem_selected' : ''
+              ].join(' ')}
+              onClick={() => this.changeView('mapview')}
+            >
+              <Icon type="mapview" />
+              <span>Показать на карте</span>
+            </div>
+            <div
+              className={[
+                'nav-elem',
+                this.state.currentView === 'listview' ? 'nav-elem_selected' : ''
+              ].join(' ')}
+              onClick={() => this.changeView('listview')}
+            >
+              <Icon type="listview" />
+              <span>Вернуться к списку</span>
+            </div>
+          </div>
+          {this.state.currentView === 'listview' ? (
+            this.gridBody
+          ) : (
+            <div className="map-view"></div>
+          )}
+        </Fragment>
+      )
     } else {
       return this.gridBody
     }
