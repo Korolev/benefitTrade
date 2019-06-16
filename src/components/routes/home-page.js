@@ -58,6 +58,7 @@ class HomePage extends Component {
         <Menu>
           <MenuItem link="/home">HomePage</MenuItem>
           <MenuItem link="/login">LoginPage</MenuItem>
+          <MenuItem link="/products/101">Products</MenuItem>
           <MenuItem link="/profile" icon="profile">
             Мой профиль
           </MenuItem>

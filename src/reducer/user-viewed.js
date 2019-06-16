@@ -1,5 +1,5 @@
 import { getProviderById, getConsumerById } from '../db'
-import { LOGIN, LOAD_USER } from '../constants'
+import { LOAD_USER } from '../constants'
 
 const defaultUser = {
   id: '',
@@ -10,14 +10,9 @@ export default (user = defaultUser, action) => {
   const { type, payload } = action
 
   switch (type) {
-    case LOGIN:
-      const id = payload.id
-      const found = getConsumerById(id)
-      return found ? { ...found } : { ...user, id }
-
     case LOAD_USER:
       const userId = payload.userId
-      const foundUser = getConsumerById(userId)
+      const foundUser = getProviderById(userId)
       return foundUser ? { ...foundUser } : { ...user, userId }
 
     default:

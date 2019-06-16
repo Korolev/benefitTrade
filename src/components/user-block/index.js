@@ -5,10 +5,7 @@ import './user-block.css'
 
 class UserBlock extends Component {
   static propTypes = {
-    size: PropTypes.string.isRequired,
-    avatar: PropTypes.string,
-    name: PropTypes.string,
-    id: PropTypes.string
+    size: PropTypes.string.isRequired
   }
 
   state = {
