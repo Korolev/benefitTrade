@@ -1,20 +1,33 @@
 import React, { Component, Fragment } from 'react'
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
 import Search from '../search'
 import Grid from '../grid'
-import { getConsumers, getProviders } from '../../db/index'
+import { getProviders } from '../../db/index'
 import StarRating from '../starrating'
-import { userSelector, userLoggedInSelector } from '../../selectors'
-import Icon from '../icon'
+import {
+  userSelector,
+  userLoggedInSelector,
+  userProvidersSelector,
+  userConsumerSelector
+} from '../../selectors'
 import UserBlock from '../user-block'
+import './home-page.css'
+import { loadProviders, loadConsumers } from '../../ac'
 
 class HomePage extends Component {
   static propTypes = {}
 
   componentDidMount() {
     this.checkLogin()
+    console.log(this.props, '<<PROPS')
+    if (this.props.user && this.props.user.type === 'consumer') {
+      this.props.loadProviders()
+    } else {
+      this.props.loadConsumers()
+    }
   }
 
   componentDidUpdate() {
@@ -22,7 +35,7 @@ class HomePage extends Component {
   }
 
   render() {
-    const traders = getProviders()
+    const itemList = this.props.itemList
 
     const dataMap = {
       connected: '',
@@ -42,7 +55,9 @@ class HomePage extends Component {
     const columnComponents = {
       name: (item, key) => (
         <div>
-          <UserBlock size="xs" user={this.props.user} />
+          <NavLink to={'/profile/' + item.id}>
+            <UserBlock size="xs" user={item} />
+          </NavLink>
         </div>
       ),
       rating: (item, key) => <StarRating starsSelected={item[key]} />,
@@ -53,9 +68,7 @@ class HomePage extends Component {
               ? 'connection-star'
               : 'connection-star connected'
           }
-        >
-          <Icon type="star" />
-        </span>
+        ></span>
       ),
       categories: (item, key) => (
         <span style={{ color: 'red' }}>{item[key].join(', ')}</span>
@@ -90,7 +103,7 @@ class HomePage extends Component {
         <Search></Search>
         <div className="content content-height-auto box-shadow">
           <Grid
-            items={traders}
+            items={itemList}
             dataMap={dataMap}
             columnSequences={columnSequences}
             columnComponents={columnComponents}
@@ -110,9 +123,24 @@ class HomePage extends Component {
 }
 
 export default connect(
-  (state) => ({
-    user: userSelector(state),
-    loggedIn: userLoggedInSelector(state)
-  }),
-  null
+  (state) => {
+    console.log(state, '<<STATE')
+    console.log(
+      state && state.user.type === 'consumer',
+      'state.user.type === consumer'
+    )
+    const listSelector =
+      state && state.user.type === 'consumer'
+        ? userProvidersSelector
+        : userConsumerSelector
+    return {
+      user: userSelector(state),
+      loggedIn: userLoggedInSelector(state),
+      itemList: listSelector(state)
+    }
+  },
+  {
+    loadProviders,
+    loadConsumers
+  }
 )(HomePage)

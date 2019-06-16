@@ -1,4 +1,10 @@
-import { LOGIN, LOAD_PRODUCTS, LOAD_USER } from '../constants'
+import {
+  LOGIN,
+  LOAD_PRODUCTS,
+  LOAD_USER,
+  LOAD_PROVIDERS,
+  LOAD_CONSUMERS
+} from '../constants'
 
 export function login(id) {
   return {
@@ -18,5 +24,17 @@ export function loadViewedUser(userId) {
   return {
     type: LOAD_USER,
     payload: { userId }
+  }
+}
+
+export function loadProviders() {
+  return {
+    type: LOAD_PROVIDERS
+  }
+}
+
+export function loadConsumers() {
+  return {
+    type: LOAD_CONSUMERS
   }
 }

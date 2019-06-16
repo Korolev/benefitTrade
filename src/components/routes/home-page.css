@@ -1,0 +1,15 @@
+.grid-col_0{
+  width: 10px;
+}
+
+.grid-col_2{
+  white-space: nowrap;
+}
+
+.grid-col_1 a,
+.grid-col_1 a:hover,
+.grid-col_1 a:visited,
+.grid-col_1 a:active {
+  text-decoration: none;
+  color: #323C47;
+}
