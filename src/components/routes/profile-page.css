@@ -52,7 +52,6 @@
     cursor: pointer;
 }
 
-
 .input-form {
     width: 100%;
     float: left;
@@ -87,4 +86,8 @@
 
 .user-map-block label {
     text-decoration: underline;
+}
+
+.custom-container .user-profile {
+    align-self: flex-start;
 }

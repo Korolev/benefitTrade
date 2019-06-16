@@ -2,8 +2,14 @@ import { getProviderById, getConsumerById } from '../db'
 import { LOGIN, LOAD_USER } from '../constants'
 
 const defaultUser = {
-  id: '',
-  type: ''
+  // id: '',
+  // type: ''
+  id: '201',
+  type: 'consumer',
+  name: 'Покупатель №1',
+  categories: ['категория1', 'категория2'],
+  rating: 3,
+  avatar: '/resources/images/avatar.png'
 }
 
 export default (user = defaultUser, action) => {

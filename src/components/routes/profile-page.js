@@ -76,7 +76,7 @@ class ProfilePage extends Component {
         <div className="content box-shadow">
           <div className="container custom-container">
             <div className="row custom-row">
-              <div className="col-sm-3 custom-col">
+              <div className="col-sm-3 custom-col user-profile">
                 <div className="col-content">
                   <UserBlock size="l" user={user} />
                 </div>
