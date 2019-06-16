@@ -21,6 +21,7 @@ export function loadProductsByUserId(userId) {
 }
 
 export function loadViewedUser(userId) {
+  console.log(userId)
   return {
     type: LOAD_USER,
     payload: { userId }

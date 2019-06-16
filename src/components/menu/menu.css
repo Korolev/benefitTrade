@@ -2,6 +2,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    box-sizing: content-box;
     width: 256px;
     height: 100%;
     padding: 20px;
@@ -53,7 +54,7 @@
 }
 
 .critery {
-    padding: 0;    
+    padding: 0;
 }
 
 .user-rating {

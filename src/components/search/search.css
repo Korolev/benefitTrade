@@ -2,7 +2,7 @@
     width: 100%;
     height: 60px;
     background: #FFF;
-    margin-left: 250px;
+    margin-left: 296px;
 }
 
 .search .form-control {
@@ -26,4 +26,4 @@
 .search input[type="search"]::-webkit-input-placeholder { color: #9e9e9e42; }
 .search input[type="search"]:-ms-input-placeholder { color: #9e9e9e42; }
 .search input[type="search"]::-ms-input-placeholder { color: #9e9e9e42; }
-.search input[type="search"]::placeholder { color: #9e9e9e42; } 
+.search input[type="search"]::placeholder { color: #9e9e9e42; }

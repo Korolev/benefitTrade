@@ -2,23 +2,26 @@
     {
         "id": "101",
         "type": "provider",
-        "name": "Поставщик №1",
+        "name": "ООО 'Милкпрод'",
         "categories": [
-            "категория1",
-            "категория2"
+            "Молоко",
+            "Сливки",
+            "Творог"
         ],
-        "rating": 3,
-        "phone": "+7(123)456-87-98"
+        "phone": "+7(123)456-87-98",
+        "rating": 4,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "102",
         "type": "provider",
         "name": "Поставщик №2",
         "categories": [
-            "категория1",
+            "Молоко",
             "категория2"
         ],
-        "rating": 4
+        "rating": 3,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "103",
@@ -28,17 +31,19 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "104",
         "type": "provider",
         "name": "Поставщик №4",
         "categories": [
-            "категория1",
-            "категория2"
+            "Молоко",
+            "Сливки"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "105",
@@ -48,17 +53,19 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "106",
         "type": "provider",
         "name": "Поставщик №6",
         "categories": [
-            "категория1",
-            "категория2"
+            "Молоко",
+            "Сливки"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "107",
@@ -68,7 +75,8 @@
             "категория1",
             "категория2"
         ],
-        "rating": 4
+        "rating": 4,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "108",
@@ -78,26 +86,29 @@
             "категория1",
             "категория2"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "109",
         "type": "provider",
         "name": "Поставщик №9",
         "categories": [
-            "категория1",
-            "категория2"
+            "Молоко",
+            "Сливки"
         ],
-        "rating": 5
+        "rating": 5,
+        "avatar": "/resources/images/avatar2.png"
     },
     {
         "id": "110",
         "type": "provider",
         "name": "Поставщик №10",
         "categories": [
-            "категория1",
+            "Молоко",
             "категория2"
         ],
-        "rating": 2
+        "rating": 2,
+        "avatar": "/resources/images/avatar2.png"
     }
 ]

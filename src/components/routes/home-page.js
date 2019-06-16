@@ -53,9 +53,6 @@ class HomePage extends Component {
     return (
       <Fragment>
         <Menu>
-          <MenuItem link="/home">HomePage</MenuItem>
-          <MenuItem link="/login">LoginPage</MenuItem>
-          <MenuItem link="/products/101">Products</MenuItem>
           <MenuItem link="/profile" icon="profile">
             Мой профиль
           </MenuItem>
@@ -76,7 +73,7 @@ class HomePage extends Component {
           </MenuItem>
         </Menu>
         <Search></Search>
-        <div className="content content-height-auto box-shadow">
+        <div className="content card content-height-auto box-shadow">
           {this.gridArea}
         </div>
       </Fragment>

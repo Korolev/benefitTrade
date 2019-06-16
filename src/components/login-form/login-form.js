@@ -40,7 +40,6 @@ class LoginForm extends Component {
                   name="customeType"
                   id="exampleRadios1"
                   value="provider"
-                  defaultChecked
                 />
                 <label className="form-check-label" htmlFor="exampleRadios1">
                   Я поставщик
@@ -54,6 +53,7 @@ class LoginForm extends Component {
                   name="customeType"
                   id="exampleRadios2"
                   value="consumer"
+                  defaultChecked
                 />
                 <label className="form-check-label" htmlFor="exampleRadios2">
                   Я покупатель
