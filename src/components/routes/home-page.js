@@ -11,7 +11,7 @@ import {
   userSelector,
   userLoggedInSelector,
   userProvidersSelector,
-  userConsumerSelector
+  userConsumersSelector
 } from '../../selectors'
 import UserBlock from '../user-block'
 import './home-page.css'
@@ -35,6 +35,40 @@ class HomePage extends Component {
   }
 
   render() {
+    return (
+      <Fragment>
+        <Menu>
+          <MenuItem link="/home">HomePage</MenuItem>
+          <MenuItem link="/login">LoginPage</MenuItem>
+          <MenuItem link="/products/101">Products</MenuItem>
+          <MenuItem link="/profile" icon="profile">
+            Мой профиль
+          </MenuItem>
+          <MenuItem link="/profile" icon="buyers">
+            Мои поставщики
+          </MenuItem>
+          <MenuItem link="/profile" icon="notification">
+            Мои уведомления
+          </MenuItem>
+          <MenuItem link="/profile" icon="orders">
+            Мои заказы
+          </MenuItem>
+          <MenuItem link="/profile" icon="find-buyer">
+            Найти поставщика
+          </MenuItem>
+          <MenuItem link="/profile" icon="more">
+            Дополнительно
+          </MenuItem>
+        </Menu>
+        <Search></Search>
+        <div className="content content-height-auto box-shadow">
+          {this.gridArea}
+        </div>
+      </Fragment>
+    )
+  }
+
+  get gridBody() {
     const itemList = this.props.itemList
 
     const dataMap = {
@@ -76,43 +110,24 @@ class HomePage extends Component {
     }
 
     return (
-      <Fragment>
-        <Menu>
-          <MenuItem link="/home">HomePage</MenuItem>
-          <MenuItem link="/login">LoginPage</MenuItem>
-          <MenuItem link="/products/101">Products</MenuItem>
-          <MenuItem link="/profile" icon="profile">
-            Мой профиль
-          </MenuItem>
-          <MenuItem link="/profile" icon="buyers">
-            Мои поставщики
-          </MenuItem>
-          <MenuItem link="/profile" icon="notification">
-            Мои уведомления
-          </MenuItem>
-          <MenuItem link="/profile" icon="orders">
-            Мои заказы
-          </MenuItem>
-          <MenuItem link="/profile" icon="find-buyer">
-            Найти поставщика
-          </MenuItem>
-          <MenuItem link="/profile" icon="more">
-            Дополнительно
-          </MenuItem>
-        </Menu>
-        <Search></Search>
-        <div className="content content-height-auto box-shadow">
-          <Grid
-            items={itemList}
-            dataMap={dataMap}
-            columnSequences={columnSequences}
-            columnComponents={columnComponents}
-            sortableColumns={sortableColumns}
-            sortByColumn={sortByColumn}
-          />
-        </div>
-      </Fragment>
+      <Grid
+        items={itemList}
+        dataMap={dataMap}
+        columnSequences={columnSequences}
+        columnComponents={columnComponents}
+        sortableColumns={sortableColumns}
+        sortByColumn={sortByColumn}
+      />
     )
+  }
+
+  get gridArea() {
+    console.log(this.props, '<<PROPS')
+    if (this.props.user && this.props.user.type === 'provider') {
+      return <div></div>
+    } else {
+      return this.gridBody
+    }
   }
 
   checkLogin = () => {
@@ -124,15 +139,10 @@ class HomePage extends Component {
 
 export default connect(
   (state) => {
-    console.log(state, '<<STATE')
-    console.log(
-      state && state.user.type === 'consumer',
-      'state.user.type === consumer'
-    )
     const listSelector =
       state && state.user.type === 'consumer'
         ? userProvidersSelector
-        : userConsumerSelector
+        : userConsumersSelector
     return {
       user: userSelector(state),
       loggedIn: userLoggedInSelector(state),

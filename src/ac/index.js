@@ -6,10 +6,10 @@ import {
   LOAD_CONSUMERS
 } from '../constants'
 
-export function login(id) {
+export function login(id, type) {
   return {
     type: LOGIN,
-    payload: { id }
+    payload: { id, type }
   }
 }
 
