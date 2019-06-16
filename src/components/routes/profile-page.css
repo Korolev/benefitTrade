@@ -4,9 +4,7 @@
 
 }
 .container.custom-container {
-    padding-top: 30px;
-    padding-right: 47px;
-    padding-left: 47px;
+    padding: 0 30px 20px;
     height: 100%
 }
 
@@ -88,6 +86,11 @@
     text-decoration: underline;
 }
 
-.custom-container .user-profile {
+.custom-container .user-profile,
+.custom-container .save-button {
     align-self: flex-start;
+}
+
+.custom-container .save-button > div {
+    text-align: right;
 }

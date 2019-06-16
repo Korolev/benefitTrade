@@ -5,6 +5,7 @@ import Menu, { MenuItem } from '../menu'
 import Search from '../search'
 import ClientMap from '../client-map'
 import UserBlock from '../user-block'
+import Brands from '../brands'
 import { userSelector, userLoggedInSelector } from '../../selectors'
 import './profile-page.css'
 import Icon from '../icon'
@@ -76,7 +77,7 @@ class ProfilePage extends Component {
         <div className="content box-shadow">
           <div className="container custom-container">
             <div className="row custom-row">
-              <div className="col-sm-3 custom-col user-profile">
+              <div className="col-sm-2 custom-col user-profile">
                 <div className="col-content">
                   <UserBlock size="l" user={user} />
                 </div>
@@ -160,10 +161,11 @@ class ProfilePage extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-sm custom-col">
+              <div className="col-sm custom-col save-button">
                 <div className="col-content">
                   <button className="button">Сохранить изменения</button>
                 </div>
+                <Brands></Brands>
               </div>
             </div>
           </div>

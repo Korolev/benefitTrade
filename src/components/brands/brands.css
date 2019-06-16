@@ -1,0 +1,25 @@
+.brands ul,
+.brands li {
+    list-style: none;
+}
+
+.custom-container .save-button .brands {
+    text-align: left;
+}
+
+.brands ul {
+    font-size: 15px;
+}
+
+.brands li {
+    font-size: 13px;
+}
+
+.brands {
+    margin-left: 105px;
+    margin-top: 15px;
+}
+
+.brands p { 
+    color: #90A0B7;
+}
