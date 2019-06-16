@@ -8,7 +8,6 @@ import sortByKey from '../../helpers/sortByKey'
 export default class Grid extends Component {
   constructor(props) {
     super(props)
-    console.log('HERE', props.sortByColumn, props)
     this.state = {
       sortType: 'asc',
       sortByColumn: props.sortByColumn,
@@ -17,7 +16,6 @@ export default class Grid extends Component {
 
     this.sortByField.bind(this)
   }
-  //const items = traders.sort(sortByKey('asc')('rating'))
 
   sortByField(colName) {
     const { sortType, sortByColumn } = this.state

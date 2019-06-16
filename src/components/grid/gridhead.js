@@ -18,7 +18,7 @@ const GridHead = ({
           ].join(' ')}
           onClick={() => onSortableClick(key)}
         >
-          {dataMap[key]}
+          <span>{dataMap[key]}</span>
         </th>
       ))}
     </tr>

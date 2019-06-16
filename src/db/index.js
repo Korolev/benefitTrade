@@ -14,4 +14,5 @@ export const getProviderById = (id) => findById(id, providers)
 export const getConsumers = () => consumers
 export const getConsumerById = (id) => findById(id, consumers)
 
-export const getProductsByUserId = (userId) => findById(userId, products, 'userId')
+export const getProductsByUserId = (userId) =>
+  findById(userId, products, 'userId')

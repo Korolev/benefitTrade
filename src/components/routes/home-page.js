@@ -8,6 +8,7 @@ import { getConsumers, getProviders } from '../../db/index'
 import StarRating from '../starrating'
 import { userSelector, userLoggedInSelector } from '../../selectors'
 import Icon from '../icon'
+import UserBlock from '../user-block'
 
 class HomePage extends Component {
   static propTypes = {}
@@ -39,8 +40,13 @@ class HomePage extends Component {
     const sortByColumn = 'rating'
 
     const columnComponents = {
-      rating: (rating) => <StarRating starsSelected={rating} />,
-      connected: (connected) => (
+      name: (item, key) => (
+        <div>
+          <UserBlock size="xs" user={this.props.user} />
+        </div>
+      ),
+      rating: (item, key) => <StarRating starsSelected={item[key]} />,
+      connected: (item, key) => (
         <span
           className={
             Math.random() * 10 > 5
@@ -50,6 +56,9 @@ class HomePage extends Component {
         >
           <Icon type="star" />
         </span>
+      ),
+      categories: (item, key) => (
+        <span style={{ color: 'red' }}>{item[key].join(', ')}</span>
       )
     }
 
@@ -79,7 +88,7 @@ class HomePage extends Component {
           </MenuItem>
         </Menu>
         <Search></Search>
-        <div className="content box-shadow">
+        <div className="content content-height-auto box-shadow">
           <Grid
             items={traders}
             dataMap={dataMap}
