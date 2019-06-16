@@ -7,12 +7,12 @@
     text-align: left;
 }
 
-.brands ul {
-    font-size: 15px;
+.brands .typo_size_l {
+    font-size: 17px;
 }
 
-.brands li {
-    font-size: 13px;
+.brands {
+    font-size: 15px;
 }
 
 .brands {
@@ -22,4 +22,26 @@
 
 .brands p { 
     color: #90A0B7;
+}
+
+input[type=checkbox], input[type=radio] {display: none;}
+input[type=checkbox] + label:before {
+    content: "\2713";
+    color: transparent;
+    display: inline-block;
+    border: 1px solid #ced4da;
+    font-size: 20px;    
+    line-height: 22px;
+    margin: -5px 5px 0 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    transition: color ease .3s;
+
+}
+input[type=checkbox]:checked + label:before {
+    color: white;
+    border: 1px solid #109CF1;
+    background: #109CF1;
 }
