@@ -1,5 +1,8 @@
 .content {
-    margin: 30px 30px 34px 290px;
+    margin: 30px 30px 34px 336px;
+}
+
+.card {
     border-radius: 4px;
     background-color: #fff;
     display: table;
@@ -23,7 +26,7 @@
 }
 
 .button:hover {
-    background-color: #385572;
+    background-color: #34AFF9;
 }
 
 .button:active,
@@ -36,7 +39,7 @@
  * Typography.
  */
 body {
-    font-family: Poppins, Verdana, sans-serif;
+    font-family: 'Poppins', Verdana, sans-serif;
     font-style: Medium;
     font-size: 13px;
     line-height: 19px;
@@ -47,6 +50,11 @@ body {
 .typo_size_l {
     font-size: 15px;
     line-height: 22px;
+}
+
+.typo_size_m {
+    font-size: 13px;
+    line-height: 19px;
 }
 
 .typo_size_s {

@@ -1,0 +1,31 @@
+.products-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-content: space-around;
+    justify-content: space-between;
+    width: 100%;
+}
+.products-list-item {
+    min-width: 255px;
+    height: 520px;
+    padding: 16px;
+    text-align: left;
+}
+
+.products-list-item__image {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    background-repeat: no-repeat;
+}
+
+.products-list-item__label {
+    display: block;
+    margin-bottom: 0;
+}
+
+.products-list-item__text {
+    display: block;
+    margin-bottom: 0.5em;
+}

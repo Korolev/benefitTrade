@@ -1,15 +1,9 @@
-.content {
-    background: #F5F6F8;
-    height: 100%
-
-}
 .container.custom-container {
     padding: 0 30px 20px;
     height: 100%
 }
 
 .custom-row {
-    background: #fff;
     margin-right: 0;
     margin-left: 0;
 }
@@ -93,4 +87,12 @@
 
 .custom-container .save-button > div {
     text-align: right;
+}
+.breadcrumbs {
+    color: #6A707E;
+    margin-bottom: 1em;
+}
+
+.breadcrumbs span {
+    margin: 0 0.4em;
 }

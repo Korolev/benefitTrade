@@ -74,7 +74,7 @@ class ProfilePage extends Component {
           </MenuItem>
         </Menu>
         <Search></Search>
-        <div className="content box-shadow">
+        <div className="content card box-shadow">
           <div className="container custom-container">
             <div className="row custom-row">
               <div className="col-sm-2 custom-col user-profile">
