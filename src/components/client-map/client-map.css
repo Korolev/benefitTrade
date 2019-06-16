@@ -15,14 +15,15 @@
 #map {
     height: 160px;
     width: 376px;
-    margin: 0px 12px 18px 12px;
+    margin: 40px 12px 18px 0;
     position: relative;
 }
 
 #header {
     height: 28px;
-    width: 376px;
-    margin: 12px 10px 12px 12px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
 }
 
 #button {
@@ -60,7 +61,7 @@
 .client-map .input {
     height: 18px;
     margin-right: 10px;
-    width: 277px;
+    width: 96%;
     padding: 4px;
     border: 1px solid #999;
     border-radius: 3px;
@@ -84,7 +85,7 @@
     position: absolute;
     left: 22px;
     margin: 0px;
-    top: 44px;
+    margin-top: -50px;
     color: #f33;
     display: none;
 }

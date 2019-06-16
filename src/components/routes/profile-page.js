@@ -160,12 +160,19 @@ class ProfilePage extends Component {
                     {pensilIcon}
                   </div>
                 </form>
+                <div className="col-content">
+                  <div className="user-map-block">
+                    <label className="input-container__title">
+                      Проверить адрес на корректность
+                    </label>
+                    <ClientMap></ClientMap>
+                  </div>
+                </div>
               </div>
               <div className="col-sm custom-col">
                 <div className="col-content">
                   <button className="save-button">Сохранить</button>
                 </div>
-                <ClientMap></ClientMap>
               </div>
             </div>
           </div>

@@ -1,5 +1,3 @@
-ymaps.ready(init)
-
 function init() {
   // Подключаем поисковые подсказки к полю ввода.
   var suggestView = new ymaps.SuggestView('suggest'),

@@ -4,9 +4,17 @@ import './client-map.css'
 class ClientMap extends Component {
   static propTypes = {}
 
+  componentDidMount() {
+    const s = document.createElement('script')
+    s.type = 'text/javascript'
+    s.async = true
+    s.innerHTML = 'ymaps.ready(init)'
+    this.instance.appendChild(s)
+  }
+
   render() {
     return (
-      <div className="client-map">
+      <div className="client-map" ref={(el) => (this.instance = el)}>
         <div id="header">
           <input
             type="text"
@@ -14,7 +22,7 @@ class ClientMap extends Component {
             className="input"
             placeholder="Введите адрес"
           />
-          <button type="submit" id="button">
+          <button type="submit" id="button" className="button">
             Проверить
           </button>
         </div>
