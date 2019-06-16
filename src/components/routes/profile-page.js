@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import history from '../../helpers/history'
 import Menu, { MenuItem } from '../menu'
 import Search from '../search'
+import ClientMap from '../client-map'
 import UserBlock from '../user-block'
 import { userSelector, userLoggedInSelector } from '../../selectors'
 import './profile-page.css'
@@ -164,6 +165,7 @@ class ProfilePage extends Component {
                 <div className="col-content">
                   <button className="save-button">Сохранить</button>
                 </div>
+                <ClientMap></ClientMap>
               </div>
             </div>
           </div>
