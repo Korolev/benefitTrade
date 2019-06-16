@@ -12,7 +12,9 @@ export default (user = defaultUser, action) => {
   switch (type) {
     case LOGIN:
       const id = payload.id
-      const found = getConsumerById(id)
+      console.log('PAYLOAD', payload)
+      const isProvider = payload.type === 'provider'
+      const found = isProvider ? getProviderById(id) : getConsumerById(id)
       return found ? { ...found } : { ...user, id }
 
     case LOAD_USER:

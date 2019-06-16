@@ -7,17 +7,25 @@ import Search from '../search'
 import Grid from '../grid'
 import { getProviders } from '../../db/index'
 import StarRating from '../starrating'
+import Icon from '../icon'
 import {
   userSelector,
   userLoggedInSelector,
   userProvidersSelector,
-  userConsumerSelector
+  userConsumersSelector
 } from '../../selectors'
 import UserBlock from '../user-block'
 import './home-page.css'
 import { loadProviders, loadConsumers } from '../../ac'
 
 class HomePage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentView: 'listview'
+    }
+    this.changeView.bind(this)
+  }
   static propTypes = {}
 
   componentDidMount() {
@@ -34,47 +42,14 @@ class HomePage extends Component {
     this.checkLogin()
   }
 
+  changeView(view) {
+    console.log(view)
+    this.setState({
+      currentView: view
+    })
+  }
+
   render() {
-    const itemList = this.props.itemList
-
-    const dataMap = {
-      connected: '',
-      name: 'Название компании',
-      phone: 'Котактный телефон',
-      type: 'Статус поставщика',
-      rating: 'Рейтинг',
-      categories: 'Категории поставщика'
-    }
-
-    const columnSequences = Object.keys(dataMap)
-
-    const sortableColumns = ['name', 'rating']
-
-    const sortByColumn = 'rating'
-
-    const columnComponents = {
-      name: (item, key) => (
-        <div>
-          <NavLink to={'/profile/' + item.id}>
-            <UserBlock size="xs" user={item} />
-          </NavLink>
-        </div>
-      ),
-      rating: (item, key) => <StarRating starsSelected={item[key]} />,
-      connected: (item, key) => (
-        <span
-          className={
-            Math.random() * 10 > 5
-              ? 'connection-star'
-              : 'connection-star connected'
-          }
-        ></span>
-      ),
-      categories: (item, key) => (
-        <span style={{ color: 'red' }}>{item[key].join(', ')}</span>
-      )
-    }
-
     return (
       <Fragment>
         <Menu>
@@ -102,17 +77,102 @@ class HomePage extends Component {
         </Menu>
         <Search></Search>
         <div className="content content-height-auto box-shadow">
-          <Grid
-            items={itemList}
-            dataMap={dataMap}
-            columnSequences={columnSequences}
-            columnComponents={columnComponents}
-            sortableColumns={sortableColumns}
-            sortByColumn={sortByColumn}
-          />
+          {this.gridArea}
         </div>
       </Fragment>
     )
+  }
+
+  get gridBody() {
+    const itemList = this.props.itemList
+
+    const dataMap = {
+      connected: '',
+      name: 'Название компании',
+      phone: 'Котактный телефон',
+      type: 'Статус поставщика',
+      rating: 'Рейтинг',
+      categories: 'Категории поставщика'
+    }
+
+    const columnSequences = Object.keys(dataMap)
+
+    const sortableColumns = ['name', 'rating']
+
+    const sortByColumn = 'rating'
+
+    const columnComponents = {
+      name: (item, key) => (
+        <div>
+          <NavLink to={'/products/' + item.id}>
+            <UserBlock size="xs" user={item} />
+          </NavLink>
+        </div>
+      ),
+      rating: (item, key) => <StarRating starsSelected={item[key]} />,
+      connected: (item, key) => (
+        <span
+          className={
+            Math.random() * 10 > 5
+              ? 'connection-star'
+              : 'connection-star connected'
+          }
+        ></span>
+      ),
+      categories: (item, key) => (
+        <span style={{ color: 'red' }}>{item[key].join(', ')}</span>
+      )
+    }
+
+    return (
+      <Grid
+        items={itemList}
+        dataMap={dataMap}
+        columnSequences={columnSequences}
+        columnComponents={columnComponents}
+        sortableColumns={sortableColumns}
+        sortByColumn={sortByColumn}
+      />
+    )
+  }
+
+  get gridArea() {
+    console.log(this.props, '<<PROPS')
+    if (this.props.user && this.props.user.type === 'provider') {
+      return (
+        <Fragment>
+          <div className="content-nav-elems">
+            <div
+              className={[
+                'nav-elem',
+                this.state.currentView === 'mapview' ? 'nav-elem_selected' : ''
+              ].join(' ')}
+              onClick={() => this.changeView('mapview')}
+            >
+              <Icon type="mapview" />
+              <span>Показать на карте</span>
+            </div>
+            <div
+              className={[
+                'nav-elem',
+                this.state.currentView === 'listview' ? 'nav-elem_selected' : ''
+              ].join(' ')}
+              onClick={() => this.changeView('listview')}
+            >
+              <Icon type="listview" />
+              <span>Вернуться к списку</span>
+            </div>
+          </div>
+          {this.state.currentView === 'listview' ? (
+            this.gridBody
+          ) : (
+            <div className="map-view"></div>
+          )}
+        </Fragment>
+      )
+    } else {
+      return this.gridBody
+    }
   }
 
   checkLogin = () => {
@@ -124,15 +184,10 @@ class HomePage extends Component {
 
 export default connect(
   (state) => {
-    console.log(state, '<<STATE')
-    console.log(
-      state && state.user.type === 'consumer',
-      'state.user.type === consumer'
-    )
     const listSelector =
       state && state.user.type === 'consumer'
         ? userProvidersSelector
-        : userConsumerSelector
+        : userConsumersSelector
     return {
       user: userSelector(state),
       loggedIn: userLoggedInSelector(state),

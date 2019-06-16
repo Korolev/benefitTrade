@@ -34,11 +34,12 @@ class LoginForm extends Component {
             <div className="form-check">
               <div className="category producer">
                 <input
+                  ref="_provider"
                   className="form-check-input radio"
                   type="radio"
-                  name="exampleRadios"
+                  name="customeType"
                   id="exampleRadios1"
-                  value="option1"
+                  value="provider"
                   defaultChecked
                 />
                 <label className="form-check-label" htmlFor="exampleRadios1">
@@ -47,11 +48,12 @@ class LoginForm extends Component {
               </div>
               <div className="category buyer">
                 <input
+                  ref="_consumer"
                   className="form-check-input radio"
                   type="radio"
-                  name="exampleRadios"
+                  name="customeType"
                   id="exampleRadios2"
-                  value="option2"
+                  value="consumer"
                 />
                 <label className="form-check-label" htmlFor="exampleRadios2">
                   Я покупатель
@@ -114,9 +116,13 @@ class LoginForm extends Component {
   }
 
   submitForm = (event) => {
+    console.log(this.refs._provider.checked, this.refs._consumer.checked)
     event.preventDefault()
     if (this.state.id !== '') {
-      this.props.handleLogin(this.state.id)
+      this.props.handleLogin(
+        this.state.id,
+        this.refs._provider.checked ? 'provider' : 'consumer'
+      )
     }
   }
 
@@ -139,6 +145,6 @@ export default connect(
     loggedIn: userLoggedInSelector(state)
   }),
   (dispatch) => ({
-    handleLogin: (id) => dispatch(login(id))
+    handleLogin: (id, type) => dispatch(login(id, type))
   })
 )(LoginForm)
