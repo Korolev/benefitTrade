@@ -14,13 +14,19 @@
     background: #fff;
     margin-right: 0;
     margin-left: 0;
-    box-shadow: 0 0 18px rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
 }
 
 .custom-container .col-sm-3, .custom-container .col-sm.custom-col {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.custom-container .col-sm.col-without-pad {
+    padding-left:0;
+}
+
+.custom-container .col-sm-3 {
+    padding-right:0;
 }
 
 .col-content{
@@ -68,4 +74,9 @@
 
 .main-profile{
     padding: 15px;
+}
+
+.save-button{
+    width: 100%;
+    height: 42px;
 }
