@@ -13,7 +13,8 @@ const GridHead = ({
         <th
           key={i}
           className={[
-            'head-col',
+            'head-col ',
+            'grid-col_' + i,
             sortableColumns.includes(key) ? 'sortable-col' : ''
           ].join(' ')}
           onClick={() => onSortableClick(key)}
