@@ -127,10 +127,6 @@ html, body {
     margin-top: 30px;
 }
 
-.button:hover {
-    background: #385572;
-}
-
 .remember-me {
     text-align: left;
 }

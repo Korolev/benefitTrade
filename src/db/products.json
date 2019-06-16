@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "userId": "101",
+        "name": "Простоквашино 2,5%, 950 мл",
+        "packCount": 12,
+        "packType": "Тетра Пак",
+        "storageTime": "Ультрапастеризованное",
+        "raw": "Коровье",
+        "country": "Россия",
+        "avatar": "/resources/images/product1.png"
+    },
+    {
+        "id": "2",
+        "userId": "101",
+        "name": "Крымский Молочник 2,5%, 1000 мл",
+        "packCount": 24,
+        "packType": "Пакет",
+        "storageTime": "Пастеризованное",
+        "raw": "Коровье",
+        "country": "Россия",
+        "avatar": "/resources/images/product2.png"
+    },
+    {
+        "id": "3",
+        "userId": "101",
+        "name": "Азбука Крыма 2,5%, 900 мл",
+        "packCount": 18,
+        "packType": "Пакет",
+        "storageTime": "Пастеризованное",
+        "raw": "Коровье",
+        "country": "Россия",
+        "avatar": "/resources/images/product3.png"
+    },
+    {
+        "id": "4",
+        "userId": "101",
+        "name": "Простоквашино 3,5%, 950 мл",
+        "packCount": 12,
+        "packType": "Тетра Пак",
+        "storageTime": "Ультрапастеризованное",
+        "raw": "Коровье",
+        "country": "Россия",
+        "avatar": "/resources/images/product1.png"
+    },
+    {
+        "id": "5",
+        "userId": "101",
+        "name": "Крымский Молочник 3,5%, 1000 мл",
+        "packCount": 24,
+        "packType": "Пакет",
+        "storageTime": "Пастеризованное",
+        "raw": "Коровье",
+        "country": "Россия",
+        "avatar": "/resources/images/product2.png"
+    },
+    {
+        "id": "6",
+        "userId": "101",
+        "name": "Азбука Крыма 3,5%, 900 мл",
+        "packCount": 18,
+        "packType": "Пакет",
+        "storageTime": "Пастеризованное",
+        "raw": "Коровье",
+        "country": "Россия",
+        "avatar": "/resources/images/product3.png"
+    }
+]
